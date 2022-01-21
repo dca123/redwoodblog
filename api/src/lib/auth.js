@@ -101,12 +101,8 @@ export const hasRole = ({ roles }) => {
  *
  * @see https://github.com/redwoodjs/redwood/tree/main/packages/auth for examples
  */
-export const requireAuth = ({ roles }) => {
+export const requireAuth = () => {
   if (!isAuthenticated()) {
     throw new AuthenticationError("You don't have permission to do that.")
-  }
-
-  if (!hasRole({ roles })) {
-    throw new ForbiddenError("You don't have access to do that.")
   }
 }
